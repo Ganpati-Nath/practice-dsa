@@ -14,15 +14,18 @@ public class App {
         // System.out.println(A.name);
 
         // parameterised ctor...
-        Student A = new Student(1, 15, "Ranu", 6);
+        Student A = new Student(1, 15, "Ranu", 6, "Meenu");
 
         // System.out.println(A.name);
  
         // copy ctor...
-        Student B = new Student(A);
+        // Student B = new Student(A);
 
-        System.out.println(A.name);
-        A.studying();
+        // System.out.println(A.name);
+        // A.studying();
+        System.out.println(A.getName());
+        A.setAge(16);
+        System.out.println(A.getAge());
 
     }
 }
