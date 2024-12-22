@@ -4,10 +4,15 @@
 using namespace std;
 
 class Vehicle {
-    public:
+    private:
         string name;
+    public:
         string model;
         int noOfTyres;
+
+        string getName() {
+            return name;
+        }
 
         Vehicle(string _name, string _model, int _noOfTyres) {
             cout << "I'm inside Vehicle ctor..." << endl;
@@ -41,7 +46,7 @@ class Car : public Vehicle {
 
         void startAC() {
 
-            cout << "AC has started of " << name << endl;
+            cout << "AC has started of " << getName() << endl;
         }
 };
 
