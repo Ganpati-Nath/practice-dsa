@@ -29,6 +29,11 @@ class Vehicle {
 
             cout << "Engine is stopping " << name << " " << model << endl;
         }
+
+        ~Vehicle() {
+
+            cout << "I'm inside Vehicle dtor..." << endl;
+        }
 };
 
 class Car : public Vehicle {
@@ -48,6 +53,11 @@ class Car : public Vehicle {
 
             cout << "AC has started of " << name << endl;
         }
+
+        ~Car() {
+
+            cout << "I'm inside Car dtor..." << endl;
+        }
         
 };
 
@@ -66,6 +76,11 @@ class Motorcycle : public Vehicle {
         void wheelie() {
 
             cout << "wheelie kr rhi h " << name << endl;
+        }
+
+        ~Motorcycle() {
+
+            cout << "I'm inside Motorcycle dtor..." << endl;
         }
 };
 
