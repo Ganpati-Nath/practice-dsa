@@ -4,15 +4,13 @@
 using namespace std;
 
 class Vehicle {
-    private:
+    protected:
         string name;
-    public:
         string model;
         int noOfTyres;
 
-        string getName() {
-            return name;
-        }
+    public:
+
 
         Vehicle(string _name, string _model, int _noOfTyres) {
             cout << "I'm inside Vehicle ctor..." << endl;
@@ -34,9 +32,11 @@ class Vehicle {
 };
 
 class Car : public Vehicle {
-    public:
+    protected:
         int noOfDoors;
         string transmissionType;
+
+    public:
 
         Car(string _name, string _model, int _noOfTyres, int _noOfDoors, string _transmissionType):Vehicle(_name, _model, _noOfTyres) {
             cout << "I'm inside Car ctor..." << endl;
@@ -46,7 +46,26 @@ class Car : public Vehicle {
 
         void startAC() {
 
-            cout << "AC has started of " << getName() << endl;
+            cout << "AC has started of " << name << endl;
+        }
+        
+};
+
+class Motorcycle : public Vehicle {
+    protected:
+        string handleBarStyle;
+        string suspensionType;
+
+    public:
+        Motorcycle(string _name, string _model, int _noOfTyres, string _handleBarStyle, string _suspensionType):Vehicle(_name, _model, _noOfTyres) {
+            cout << "I'm inside Motorcycle ctor..." << endl;
+            this->handleBarStyle = _handleBarStyle;
+            this->suspensionType = _suspensionType;
+        }
+
+        void wheelie() {
+
+            cout << "wheelie kr rhi h " << name << endl;
         }
 };
 
@@ -56,6 +75,14 @@ int main() {
     A.start_engine();
     A.startAC();
     A.stop_engine();
+    // A.name; // inaccessible...
+
+    // Vehicle v;
+    // v.name; // inaccessible...
+    Motorcycle M("BMW", "VXI", 2, "U", "Hard");
+    M.start_engine();
+    M.wheelie();
+    M.stop_engine();
 
     return 0;
 }
