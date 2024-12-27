@@ -42,12 +42,12 @@ public class Main {
 
     public static void main (String[] args) {
 
-        Bird bird1 = new Sparrow();
-        bird1.eat();
-        bird1.fly();
+        Bird bird = new Sparrow();
+        bird.eat();
+        bird.fly();
 
-        Bird bird2 = new Eagle();
-        bird2.eat();
-        bird2.fly();
+        bird = new Eagle();
+        bird.eat();
+        bird.fly();
     }
 }
